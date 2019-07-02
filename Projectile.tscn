@@ -7,18 +7,19 @@ extents = Vector2( 2.03528, 2.50605 )
 
 [node name="Projectile" type="RigidBody2D"]
 position = Vector2( 10.6526, 9.12343 )
-scale = Vector2( 1.00274, 0.994236 )
-mode = 2
+mass = 0.00102041
 gravity_scale = 0.0
+linear_damp = 0.0
+angular_damp = 0.0
 script = ExtResource( 1 )
-velocity = Vector2( 0, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.010582, -0.500598 )
+shape = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -2.09797
 margin_top = -2.96744
 margin_right = 1.90203
 margin_bottom = 2.03256
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0105824, -0.500598 )
-shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]

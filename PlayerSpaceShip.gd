@@ -4,6 +4,7 @@ signal hit
 
 export (PackedScene) var Projectile
 export var move_x = 100
+export var speed = 100
 var screen_size
 
 func start(pos):
@@ -24,8 +25,8 @@ func _process(delta):
 		var projectile = Projectile.instance()
 		add_child(projectile)
 		projectile.position = $PlayerSpaceShip/ProjectilePosition.position
-		projectile.linear_velocity = Vector2(0, -800)
-	position.x = clamp(position.x, 0, screen_size.x)
+		projectile.linear_velocity = Vector2(0, speed)
+	position.x = clamp(position.x, 20, screen_size.x-20)
 	position.y = clamp(position.y, 0, screen_size.y)
 
 func _on_PlayerSpaceShip_body_entered(body):
