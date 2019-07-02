@@ -7,7 +7,8 @@ extents = Vector2( 2.03528, 2.50605 )
 
 [node name="Projectile" type="RigidBody2D"]
 position = Vector2( 10.6526, 9.12343 )
-mass = 0.00102041
+scale = Vector2( 1.00274, 0.994236 )
+mode = 2
 gravity_scale = 0.0
 script = ExtResource( 1 )
 velocity = Vector2( 0, 0 )

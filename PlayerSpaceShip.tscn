@@ -18,13 +18,13 @@ position = Vector2( -0.115997, 0.814514 )
 texture = ExtResource( 3 )
 
 [node name="ProjectilePosition" type="Position2D" parent="PlayerSpaceShip"]
-position = Vector2( 0.115997, -30.8145 )
+position = Vector2( 0, -20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.923584 )
 shape = SubResource( 1 )
 
 [node name="ShootingCooldown" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.3
 one_shot = true
 [connection signal="body_entered" from="." to="." method="_on_PlayerSpaceShip_body_entered"]

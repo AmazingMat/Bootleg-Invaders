@@ -24,7 +24,7 @@ func _process(delta):
 		var projectile = Projectile.instance()
 		add_child(projectile)
 		projectile.position = $PlayerSpaceShip/ProjectilePosition.position
-		projectile.linear_velocity = Vector2(0, -100)
+		projectile.linear_velocity = Vector2(0, -800)
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 
