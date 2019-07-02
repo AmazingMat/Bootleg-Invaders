@@ -8,10 +8,9 @@ var screen_size
 
 func start(pos):
 	position = pos
-	$Projectile.start($ProjectilePosition)
 	show()
 	$CollisionShape2D.disabled = false
-	
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
@@ -24,8 +23,8 @@ func _process(delta):
 		$ShootingCooldown.start()
 		var projectile = Projectile.instance()
 		add_child(projectile)
-		projectile.position = $ProjectilePosition.position
-		projectile.linear_velocity = Vector2(0, 10)
+		projectile.position = $PlayerSpaceShip/ProjectilePosition.position
+		projectile.linear_velocity = Vector2(0, -100)
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 
@@ -33,3 +32,4 @@ func _on_PlayerSpaceShip_body_entered(body):
 	hide() # Players disappears after being hit
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)
+	print_debug(body.name)

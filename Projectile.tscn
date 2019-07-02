@@ -7,7 +7,10 @@ extents = Vector2( 2.03528, 2.50605 )
 
 [node name="Projectile" type="RigidBody2D"]
 position = Vector2( 10.6526, 9.12343 )
+mass = 0.00102041
+gravity_scale = 0.0
 script = ExtResource( 1 )
+velocity = Vector2( 0, 0 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -2.09797

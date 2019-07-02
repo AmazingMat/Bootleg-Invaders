@@ -4,7 +4,7 @@
 [ext_resource path="res://Projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerSpaceShip.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 15.3097
 
 [node name="PlayerSpaceShip" type="Area2D"]
@@ -14,19 +14,17 @@ Projectile = ExtResource( 2 )
 move_x = 3
 
 [node name="PlayerSpaceShip" type="Sprite" parent="."]
+position = Vector2( -0.115997, 0.814514 )
 texture = ExtResource( 3 )
 
+[node name="ProjectilePosition" type="Position2D" parent="PlayerSpaceShip"]
+position = Vector2( 0.115997, -30.8145 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 0.923584 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="ShootingCooldown" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-
-[node name="ProjectilePosition" type="Position2D" parent="."]
-position = Vector2( -0.418121, -17.9999 )
-
-[node name="Projectile" parent="." instance=ExtResource( 2 )]
 [connection signal="body_entered" from="." to="." method="_on_PlayerSpaceShip_body_entered"]
