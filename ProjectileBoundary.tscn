@@ -13,8 +13,7 @@ position = Vector2( 240, 70 )
 shape = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
-margin_top = 40.0
+margin_top = 65.0
 margin_right = 480.0
-margin_bottom = 49.0
+margin_bottom = 74.0
 [connection signal="body_entered" from="." to="." method="_on_ProjectileBoundary_body_entered"]

@@ -3,6 +3,7 @@ extends Area2D
 signal hit
 
 export (PackedScene) var Projectile
+export (PackedScene) var ProjectileBoundary
 export var move_x = 100
 export var speed = 100
 var screen_size
@@ -33,4 +34,5 @@ func _on_PlayerSpaceShip_body_entered(body):
 	hide() # Players disappears after being hit
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)
+	queue_free()
 	print_debug(body.name)

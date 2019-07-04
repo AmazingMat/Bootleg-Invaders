@@ -7,11 +7,22 @@
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 483.0
+margin_bottom = 723.0
+
 [node name="PlayerShipPosition" type="Position2D" parent="."]
 position = Vector2( 240, 660 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ProjectileBoundaryPos" type="Position2D" parent="."]
-position = Vector2( 0, 80 )
+position = Vector2( 0, 60 )
 
 [node name="PlayerSpaceShip" parent="." instance=ExtResource( 2 )]
 visible = false
